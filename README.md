@@ -6,7 +6,7 @@ corresponding pins on the Arduino.
 
 The code is a slight modified version of a previously existing one provided by
 [FIUBA](https://es.wikipedia.org/wiki/Facultad_de_Ingenier%C3%ADa_(Universidad_de_Buenos_Aires))'s
-lecturers from course "Introducción a la Ingeniería Electrónica", and
+professors from lecture "Introducción a la Ingeniería Electrónica", and
 corresponds to the Final Group Project. The modification adds the ability to use
 pins from different ports instead of all the pins from the same port.
 
