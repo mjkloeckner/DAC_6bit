@@ -58,8 +58,7 @@ void loop() {
   // Se usa una función especial para leer de la memoria de programa
   valor = pgm_read_byte(&tabla[indice]);
   
-  // Se envía el valor de la tabla convertido a 6 bits al DAC
-  //printR2R(valor>>2);
+  // Se envía el valor de 8 bits al DAC
   printR2R(valor);
   
   indice += paso;     // Se incrementa el índice a la próxima muestra
@@ -71,18 +70,8 @@ void loop() {
 
 // Esta función desprecia los ultimos 2 bits menos significativos de `numero`
 void printR2R (uint8_t numero) {
-  // numero = numero<<2;
-
-  // 0 < numero < 255 (8 bits)
-  // ej 69 (0100 0101)
-  //        |||| ||``- resolucion de 6 bits, se desprecian los
-  //        |||| ||    bits menos significativos
-  //        |||`-``---- PORTD (LSB)
-  //        ||| 
-  //        ```--- PORTB (MSB)
-
   // El parametro `numero` solo puede representar hasta 255 ya que es de 8 bits
-  // Como el DAC es de 6 bits se desprecian los ultimos dos bits menoss
+  // Como el DAC es de 6 bits se desprecian los ultimos dos bits menos
   // significativos de `numero`. Los 6 bits restantes se mandan al R2R a través
   // de lo pines correspondientes
 
