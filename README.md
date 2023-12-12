@@ -24,9 +24,9 @@ shows the difference in speed of using builtin functions and port manipulation
 question](https://forum.arduino.cc/t/ddr-vs-pinmode-solved/497927/3))
 
 ```c
-pinMode(5, OUTPUT);  takes 71 clock cycles (~4.43us@16Mhz)
-DDRD |= 0b00010000;  takes  2 clock cycles (~0.125us@16Mhz)
-bitSet(PORTD, 5, 1); takes  2 clock cycles (~0.125us@16Mhz)
+pinMode(5, OUTPUT);  // takes 71 clock cycles (~4.430us@16Mhz)
+DDRD |= 0b00010000;  // takes  2 clock cycles (~0.125us@16Mhz)
+bitSet(PORTD, 5, 1); // takes  2 clock cycles (~0.125us@16Mhz)
 ```
 
 Also assigning the new value to the port allow for multiple ports to be updated
